@@ -13,6 +13,17 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Register the location for handlebars partials here:
+app.get('/beers', (req, res) => {
+  punkAPI
+    .getBeers()
+    .then(response => {
+      console.log(response);
+      res.render('beers', { response });
+    })
+    .catch(error => {
+      console.log(error);
+    });
+});
 
 // ...
 
