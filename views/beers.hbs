@@ -1,10 +1,4 @@
-<h1>All Beers</h1>
-
+<h1>All the Beers</h1>
 {{#each beers}}
-  <div class='beer'>
-    <img src='{{image_url}}' alt='{{name}} Image' />
-    <h2>{{name}}</h2>
-    <p>{{description}}</p>
-    <p><strong>Tagline:</strong> {{tagline}}</p>
-  </div>
+  {{> beerpartial beer=this}}
 {{/each}}
